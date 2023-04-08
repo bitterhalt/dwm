@@ -105,6 +105,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browser[] = { "firefox", NULL };
 static const char *rofidmenu[]  = { "rofidmenu", NULL };
 static const char *powermenu[] = { "powermenu", NULL };
+#include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -119,6 +120,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Next,   incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+   	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_u,      incrgaps,       {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_u,      incrgaps,       {.i = -5 } },
 	{ MODKEY,                       XK_i,      incrigaps,      {.i = +5 } },
