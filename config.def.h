@@ -108,6 +108,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *rofidmenu[]  = { "rofidmenu", NULL };
 static const char *powermenu[] = { "powermenu", NULL };
 static const char *picom[] = { "picom-toggle", NULL };
+static const char *mail[] = {"thunderbird", NULL };
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -115,7 +116,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_d,      spawn,          {.v = rofidmenu } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } },
-    { MODKEY|ControlMask,           XK_F12,    spawn,          {.v = picom } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -169,9 +169,10 @@ static const Key keys[] = {
     { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%; kill -39 $(pidof dwmblocks)") },
     { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%; kill -39 $(pidof dwmblocks)") },
         /* Other bindings*/
-    { MODKEY|ShiftMask,		    	XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
-    { MODKEY|ShiftMask,		        XK_n,		spawn,		SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
-    { MODKEY|ShiftMask,		        XK_F12,	    spawn,		{.v = (const char*[]){ "picom-toggle", NULL } } }
+    { MODKEY|ShiftMask,		    	XK_w,	   spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+    { MODKEY|ShiftMask,		        XK_n,	   spawn,		SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
+    { MODKEY|ShiftMask,             XK_m,      spawn,       {.v = mail } },
+    { MODKEY|ShiftMask,             XK_F12,    spawn,       {.v = picom } },
 };
 
 /* button definitions */
