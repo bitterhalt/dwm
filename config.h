@@ -105,6 +105,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browser[] = { "firefox", NULL };
 static const char *rofidmenu[]  = { "rofidmenu", NULL };
 static const char *powermenu[] = { "powermenu", NULL };
+static const char *picom[] = { "picom-toggle", NULL };
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -113,6 +114,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser } },
     { MODKEY,                       XK_d,      spawn,          {.v = rofidmenu } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } },
+    { MODKEY|ControlMask,           XK_F12,    spawn,          {.v = picom } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
