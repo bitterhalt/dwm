@@ -1,4 +1,7 @@
 /* See LICENSE file for copyright and license details. */
+/* Constants */
+#define TERMINAL "st"
+#define BROWSER "firefox"
 #include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -102,7 +105,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browser[] = { "firefox", NULL };
 static const char *rofidmenu[]  = { "rofidmenu", NULL };
 static const char *powermenu[] = { "powermenu", NULL };
 static const char *picom[] = { "picom-toggle", NULL };
@@ -111,7 +113,6 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser } },
     { MODKEY,                       XK_d,      spawn,          {.v = rofidmenu } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } },
     { MODKEY|ControlMask,           XK_F12,    spawn,          {.v = picom } },
@@ -164,9 +165,13 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_r,      quit,           {1} }, 
         /* Multimedia keys */
-{ 0,            XF86XK_AudioMute,        spawn,         SHCMD("pactl set-sink-mute 0 toggle; kill -39 $(pidof dwmblocks)") },
-{ 0,            XF86XK_AudioLowerVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%; kill -39 $(pidof dwmblocks)") },
-{ 0,            XF86XK_AudioRaiseVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%; kill -39 $(pidof dwmblocks)") },
+    { 0,   XF86XK_AudioMute,        spawn,         SHCMD("pactl set-sink-mute 0 toggle; kill -39 $(pidof dwmblocks)") },
+    { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%; kill -39 $(pidof dwmblocks)") },
+    { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%; kill -39 $(pidof dwmblocks)") },
+        /* Other bindings*/
+    { MODKEY|ShiftMask,		    	XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+    { MODKEY|ShiftMask,		        XK_n,		spawn,		SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
+    { MODKEY|ShiftMask,		        XK_F12,	    spawn,		{.v = (const char*[]){ "picom-toggle", NULL } } }
 };
 
 /* button definitions */
