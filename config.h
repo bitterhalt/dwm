@@ -13,10 +13,10 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int horizpadbar        = 1;        /* horizontal padding for statusbar */
+static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=10" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:style:Reguler:size=10" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10:antialias=true:autohint=true";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -51,24 +51,24 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",	  NULL,			NULL,		0,				1,			 -1 },
-	{ "firefox",  NULL,			NULL,		1 << 1,			0,			 -1 },
-    { "mpv",      NULL,         NULL,       0,              1,           -1 },
-{ "qBittorrent",  NULL,         NULL,       1 << 4,         0,           -1 },
-{ "thunderbird",  NULL,         NULL,       1 << 3,         0,           -1 },
-{ "Steam",        NULL,         NULL,       1 << 5,         1,           -1 },
-{ "corectrl",      NULL,         NULL,       1 << 8,         1,           -1 },
-{ "Bitwarden",    NULL,         NULL,       0,              1,           -1 },
-{ "floatterm",    NULL,         NULL,       0,              1,           -1 },
-{ "Galculator",   NULL,         NULL,       0,              1,           -1 },
-{ "Gcolor3",      NULL,         NULL,       0,              1,           -1 },
-{ "Lxappearance", NULL,         NULL,       0,              1,           -1 },
-{ "Nitrogen",     NULL,         NULL,       0,              1,           -1 },
-{ "Nsxiv",        NULL,         NULL,       0,              1,           -1 },
-{ "Pavucontrol",  NULL,         NULL,       0,              1,           -1 },
-{ "qt5ct",        NULL,         NULL,       0,              1,           -1 },
-{ "qt6ct",        NULL,         NULL,       0,              1,           -1 },
-{ "kdenlive",     NULL,         NULL,       0,              1,           -1 },
+	{ "Gimp",	      NULL,			NULL,		0,				1,			 -1 },
+	{ "firefox",      NULL,			NULL,		1 << 1,			0,			 -1 },
+    { "mpv",          NULL,         NULL,       0,              1,           -1 },
+    { "qBittorrent",  NULL,         NULL,       1 << 4,         0,           -1 },
+    { "thunderbird",  NULL,         NULL,       1 << 3,         0,           -1 },
+    { "Steam",        NULL,         NULL,       1 << 5,         1,           -1 },
+    { "corectrl",     NULL,         NULL,       1 << 8,         1,           -1 },
+    { "Bitwarden",    NULL,         NULL,       0,              1,           -1 },
+    { "floatterm",    NULL,         NULL,       0,              1,           -1 },
+    { "Galculator",   NULL,         NULL,       0,              1,           -1 },
+    { "Gcolor3",      NULL,         NULL,       0,              1,           -1 },
+    { "Lxappearance", NULL,         NULL,       0,              1,           -1 },
+    { "Nitrogen",     NULL,         NULL,       0,              1,           -1 },
+    { "Nsxiv",        NULL,         NULL,       0,              1,           -1 },
+    { "Pavucontrol",  NULL,         NULL,       0,              1,           -1 },
+    { "qt5ct",        NULL,         NULL,       0,              1,           -1 },
+    { "qt6ct",        NULL,         NULL,       0,              1,           -1 },
+    { "kdenlive",     NULL,         NULL,       0,              1,           -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
 	{ NULL,		  "ranger",		NULL,		SPTAG(1),		1,			 -1 },
 	{ NULL,       "discord",    NULL,		SPTAG(2),		1,			 -1 },
@@ -109,6 +109,10 @@ static const char *rofidmenu[]  = { "rofidmenu", NULL };
 static const char *powermenu[] = { "powermenu", NULL };
 static const char *picom[] = { "picom-toggle", NULL };
 static const char *mail[] = {"thunderbird", NULL };
+static const char *slock[] ={"i3lock-color", NULL };
+static const char *sysinfo[] ={"sysnfo", NULL };
+static const char *weather[] ={"weather-notify", NULL };
+
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -173,6 +177,12 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,		        XK_n,	   spawn,		SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY|ShiftMask,             XK_m,      spawn,       {.v = mail } },
     { MODKEY|ShiftMask,             XK_F12,    spawn,       {.v = picom } },
+    { MODKEY|ControlMask,           XK_i,      spawn,       {.v = sysinfo } },
+    { MODKEY|ControlMask,           XK_w,      spawn,       {.v = weather } },
+    { MODKEY|ControlMask,           XK_l,      spawn,       {.v = slock  } },
+    { MODKEY,                       XK_Print,  spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
+    { MODKEY|ShiftMask,             XK_Print,  spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
+
 };
 
 /* button definitions */
