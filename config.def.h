@@ -13,7 +13,7 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
+static const int horizpadbar        = 1;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:style:Reguler:size=10" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10:antialias=true:autohint=true";
@@ -110,8 +110,6 @@ static const char *powermenu[] = { "powermenu", NULL };
 static const char *picom[] = { "picom-toggle", NULL };
 static const char *mail[] = {"thunderbird", NULL };
 static const char *slock[] ={"i3lock-color", NULL };
-static const char *sysinfo[] ={"sysnfo", NULL };
-static const char *weather[] ={"weather-notify", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -175,14 +173,15 @@ static const Key keys[] = {
     { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%; kill -39 $(pidof dwmblocks)") },
         /* Other bindings*/
     { MODKEY|ShiftMask,		    	XK_w,	   spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
-    { MODKEY|ShiftMask,		        XK_n,	   spawn,		SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY|ShiftMask,             XK_m,      spawn,       {.v = mail } },
     { MODKEY|ShiftMask,             XK_F12,    spawn,       {.v = picom } },
-    { MODKEY|ControlMask,           XK_i,      spawn,       {.v = sysinfo } },
-    { MODKEY|ControlMask,           XK_w,      spawn,       {.v = weather } },
     { MODKEY|ControlMask,           XK_l,      spawn,       {.v = slock  } },
+    { MODKEY|ShiftMask,		        XK_n,	   spawn,		SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,  spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
     { MODKEY|ShiftMask,             XK_Print,  spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
+    { MODKEY|ControlMask,           XK_c,      spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
+    { MODKEY|ControlMask,           XK_i,      spawn,       SHCMD("$HOME/.local/bin/sysnfo") },
+    { MODKEY|ControlMask,           XK_w,      spawn,       SHCMD("$HOME/.local/bin/weather-notify") },
 
 };
 
