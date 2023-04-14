@@ -51,8 +51,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",	      NULL,			NULL,		0,				1,			 -1 },
-	{ "firefox",      NULL,			NULL,		1 << 1,			0,			 -1 },
+    { "Gimp",         NULL,         NULL,       0,              1,           -1 },
+    { "firefox",      NULL,         NULL,       1 << 1,         0,           -1 },
     { "mpv",          NULL,         NULL,       0,              1,           -1 },
     { "qBittorrent",  NULL,         NULL,       1 << 4,         0,           -1 },
     { "thunderbird",  NULL,         NULL,       1 << 3,         0,           -1 },
@@ -70,9 +70,9 @@ static const Rule rules[] = {
     { "qt6ct",        NULL,         NULL,       0,              1,           -1 },
     { "kdenlive",     NULL,         NULL,       0,              1,           -1 },
     { "Nm-connection-editor",     NULL,         NULL,       0,              1,           -1 },
-	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
-	{ NULL,		  "ranger",		NULL,		SPTAG(1),		1,			 -1 },
-	{ NULL,       "discord",    NULL,		SPTAG(2),		1,			 -1 },
+	{ NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
+	{ NULL,       "ranger",     NULL,       SPTAG(1),       1,           -1 },
+	{ NULL,       "discord",    NULL,       SPTAG(2),       1,           -1 },
 };
 
 /* layout(s) */
@@ -143,7 +143,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_F1,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_F2,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ControlMask,	    	XK_comma,  cyclelayout,    {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
@@ -154,9 +154,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,            			XK_t,  	   togglescratch,  {.ui = 0 } },
-	{ MODKEY,            			XK_r,	   togglescratch,  {.ui = 1 } },
-	{ MODKEY,            			XK_c,	   togglescratch,  {.ui = 2 } },
+	{ MODKEY,                       XK_t,      togglescratch,  {.ui = 0 } },
+	{ MODKEY,                       XK_r,      togglescratch,  {.ui = 1 } },
+	{ MODKEY,                       XK_c,      togglescratch,  {.ui = 2 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
@@ -174,12 +174,12 @@ static const Key keys[] = {
     { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%; kill -39 $(pidof dwmblocks)") },
     { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%; kill -39 $(pidof dwmblocks)") },
         /* Other bindings*/
-    { MODKEY|ShiftMask,		    	XK_w,	   spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+    { MODKEY|ShiftMask,             XK_w,      spawn,       {.v = (const char*[]){ BROWSER, NULL } } },
     { MODKEY|ShiftMask,             XK_m,      spawn,       {.v = mail } },
     { MODKEY|ShiftMask,             XK_F12,    spawn,       {.v = picom } },
     { MODKEY|ControlMask,           XK_l,      spawn,       {.v = slock  } },
     { MODKEY|ShiftMask,             XK_e,      spawn,       {.v = thunar } },
-    { MODKEY|ShiftMask,		        XK_n,	   spawn,		SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
+    { MODKEY|ShiftMask,		        XK_n,      spawn,       SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,  spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
     { MODKEY|ShiftMask,             XK_Print,  spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
     { MODKEY|ControlMask,           XK_c,      spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
