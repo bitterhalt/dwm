@@ -1,6 +1,6 @@
 ## DWM - dynamic window manager
 
-This is my build of DWM
+This is my build of DWM. It uses [statuscmd](https://dwm.suckless.org/patches/statuscmd/) and [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) to draw statusbar with nice clickable blocks
 
 ### Patches:
 * dwm-actualfullscreen
@@ -14,15 +14,17 @@ This is my build of DWM
 * dwm-statuscmd
 * dwm-vanitygaps
 * dwm-xrdb
+* statuscmd
 
 ## statusbar
 [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async)
+
 Check my statusbar scripts from .dotfiles
 
 ## Installation
 ```
 git clone https://github.com/bitterhalt/dwm
-cd st
+cd dwm
 sudo make instal
 ```
 ### Keyboard Shortcuts
