@@ -69,6 +69,7 @@ static const Rule rules[] = {
     { "qt5ct",        NULL,         NULL,       0,              1,           -1 },
     { "qt6ct",        NULL,         NULL,       0,              1,           -1 },
     { "kdenlive",     NULL,         NULL,       0,              1,           -1 },
+    { "Nm-connection-editor",     NULL,         NULL,       0,              1,           -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
 	{ NULL,		  "ranger",		NULL,		SPTAG(1),		1,			 -1 },
 	{ NULL,       "discord",    NULL,		SPTAG(2),		1,			 -1 },
