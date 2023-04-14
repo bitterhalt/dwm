@@ -110,6 +110,7 @@ static const char *powermenu[] = { "powermenu", NULL };
 static const char *picom[] = { "picom-toggle", NULL };
 static const char *mail[] = {"thunderbird", NULL };
 static const char *slock[] ={"i3lock-color", NULL };
+static const char *thunar[] ={"thunar", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -166,7 +167,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask,           XK_r,      quit,           {1} }, 
+	{ MODKEY|ControlMask,           XK_r,      quit,           {1} },
         /* Multimedia keys */
     { 0,   XF86XK_AudioMute,        spawn,         SHCMD("pactl set-sink-mute 0 toggle; kill -39 $(pidof dwmblocks)") },
     { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%; kill -39 $(pidof dwmblocks)") },
@@ -176,6 +177,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_m,      spawn,       {.v = mail } },
     { MODKEY|ShiftMask,             XK_F12,    spawn,       {.v = picom } },
     { MODKEY|ControlMask,           XK_l,      spawn,       {.v = slock  } },
+    { MODKEY|ShiftMask,             XK_e,      spawn,       {.v = thunar } },
     { MODKEY|ShiftMask,		        XK_n,	   spawn,		SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,  spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
     { MODKEY|ShiftMask,             XK_Print,  spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
