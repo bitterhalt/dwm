@@ -115,76 +115,76 @@ static const char *thunar[] ={"thunar", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
-    /* modifier                     key        function        argument */
-    { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-    { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_d,      spawn,          {.v = rofidmenu } },
-    { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenu } },
-    { MODKEY,                       XK_b,      togglebar,      {0} },
-    { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-    { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-    { MODKEY,                       XK_Prior,  incnmaster,     {.i = +1 } },
-    { MODKEY,                       XK_Next,   incnmaster,     {.i = -1 } },
-    { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-    { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-    { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-    { MODKEY,                       XK_u,      incrgaps,       {.i = +5 } },
-    { MODKEY|ShiftMask,             XK_u,      incrgaps,       {.i = -5 } },
-    { MODKEY,                       XK_i,      incrigaps,      {.i = +5 } },
-    { MODKEY|ShiftMask,             XK_i,      incrigaps,      {.i = -5 } },
-    { MODKEY,                       XK_o,      incrogaps,      {.i = +5 } },
-    { MODKEY|ShiftMask,             XK_o,      incrogaps,      {.i = -5 } },
-    { MODKEY,                       XK_g,      togglegaps,     {0} },
-    { MODKEY|ShiftMask,             XK_g,      defaultgaps,    {0} },
-    { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-    { MODKEY,                       XK_Tab,    view,           {0} },
-    { MODKEY,                       XK_q,      killclient,     {0} },
-    { MODKEY,                       XK_F1,      setlayout,      {.v = &layouts[0]} },
-    { MODKEY,                       XK_F2,      setlayout,      {.v = &layouts[1]} },
-    { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-    { MODKEY|ControlMask,           XK_comma,  cyclelayout,    {.i = -1 } },
-    { MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
-    { MODKEY,                       XK_space,  setlayout,      {0} },
-    { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-    { MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
-    { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-    { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-    { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-    { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-    { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-    { MODKEY,                       XK_t,      togglescratch,  {.ui = 0 } },
-    { MODKEY,                       XK_r,      togglescratch,  {.ui = 1 } },
-    { MODKEY,                       XK_c,      togglescratch,  {.ui = 2 } },
-    { MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-    TAGKEYS(                        XK_1,                      0)
-    TAGKEYS(                        XK_2,                      1)
-    TAGKEYS(                        XK_3,                      2)
-    TAGKEYS(                        XK_4,                      3)
-    TAGKEYS(                        XK_5,                      4)
-    TAGKEYS(                        XK_6,                      5)
-    TAGKEYS(                        XK_7,                      6)
-    TAGKEYS(                        XK_8,                      7)
-    TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ControlMask,           XK_q,      quit,           {0} },
-    { MODKEY|ControlMask,           XK_r,      quit,           {1} },
+    /* modifier                     key             function        argument */
+    { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
+    { MODKEY,                       XK_d,           spawn,          {.v = rofidmenu } },
+    { MODKEY|ShiftMask,             XK_p,           spawn,          {.v = powermenu } },
+    { MODKEY,                       XK_b,           togglebar,      {0} },
+    { MODKEY,                       XK_j,           focusstack,     {.i = +1 } },
+    { MODKEY,                       XK_k,           focusstack,     {.i = -1 } },
+    { MODKEY,                       XK_Prior,       incnmaster,     {.i = +1 } },
+    { MODKEY,                       XK_Next,        incnmaster,     {.i = -1 } },
+    { MODKEY,                       XK_h,           setmfact,       {.f = -0.05} },
+    { MODKEY,                       XK_l,           setmfact,       {.f = +0.05} },
+    { MODKEY|ShiftMask,             XK_j,           movestack,      {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_k,           movestack,      {.i = -1 } },
+    { MODKEY,                       XK_plus,        incrgaps,       {.i = +5 } },
+    { MODKEY,                       XK_minus,       incrgaps,       {.i = -5 } },
+    { MODKEY|ShiftMask,             XK_plus,        incrigaps,      {.i = +5 } },
+    { MODKEY|ShiftMask,             XK_minus,       incrigaps,      {.i = -5 } },
+    { MODKEY|ControlMask,           XK_plus,        incrogaps,      {.i = +5 } },
+    { MODKEY|ControlMask,           XK_minus,       incrogaps,      {.i = -5 } },
+    { MODKEY,                       XK_g,           togglegaps,     {0} },
+    { MODKEY|ShiftMask,             XK_g,           defaultgaps,    {0} },
+    { MODKEY|ShiftMask,             XK_Return,      zoom,           {0} },
+    { MODKEY,                       XK_Tab,         view,           {0} },
+    { MODKEY,                       XK_q,           killclient,     {0} },
+    { MODKEY,                       XK_F1,           setlayout,      {.v = &layouts[0]} },
+    { MODKEY,                       XK_F2,           setlayout,      {.v = &layouts[1]} },
+    { MODKEY,                       XK_m,           setlayout,      {.v = &layouts[2]} },
+    { MODKEY|ControlMask,           XK_comma,       cyclelayout,    {.i = -1 } },
+    { MODKEY|ControlMask,           XK_period,      cyclelayout,    {.i = +1 } },
+    { MODKEY,                       XK_space,       setlayout,      {0} },
+    { MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
+    { MODKEY|ShiftMask,             XK_f,           togglefullscr,  {0} },
+    { MODKEY,                       XK_0,           view,           {.ui = ~0 } },
+    { MODKEY|ShiftMask,             XK_0,           tag,            {.ui = ~0 } },
+    { MODKEY,                       XK_comma,       focusmon,       {.i = -1 } },
+    { MODKEY,                       XK_period,      focusmon,       {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_comma,       tagmon,         {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_period,      tagmon,         {.i = +1 } },
+    { MODKEY,                       XK_t,           togglescratch,  {.ui = 0 } },
+    { MODKEY,                       XK_r,           togglescratch,  {.ui = 1 } },
+    { MODKEY,                       XK_c,           togglescratch,  {.ui = 2 } },
+    { MODKEY,                       XK_F5,          xrdb,           {.v = NULL } },
+    TAGKEYS(                        XK_1,                           0)
+    TAGKEYS(                        XK_2,                           1)
+    TAGKEYS(                        XK_3,                           2)
+    TAGKEYS(                        XK_4,                           3)
+    TAGKEYS(                        XK_5,                           4)
+    TAGKEYS(                        XK_6,                           5)
+    TAGKEYS(                        XK_7,                           6)
+    TAGKEYS(                        XK_8,                           7)
+    TAGKEYS(                        XK_9,                           8)
+    { MODKEY|ControlMask,           XK_q,           quit,           {0} },
+    { MODKEY|ControlMask,           XK_r,           quit,           {1} },
     /* Multimedia keys */
     { 0,   XF86XK_AudioMute,        spawn,         SHCMD("pactl set-sink-mute 0 toggle; kill -39 $(pidof dwmblocks)") },
     { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%; kill -39 $(pidof dwmblocks)") },
     { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%; kill -39 $(pidof dwmblocks)") },
     /* Other bindings*/
-    { MODKEY|ShiftMask,             XK_w,      spawn,       {.v = (const char*[]){ BROWSER, NULL } } },
-    { MODKEY|ShiftMask,             XK_m,      spawn,       {.v = mail } },
-    { MODKEY|ShiftMask,             XK_F12,    spawn,       {.v = picom } },
-    { MODKEY|ControlMask,           XK_l,      spawn,       {.v = slock  } },
-    { MODKEY|ShiftMask,             XK_e,      spawn,       {.v = thunar } },
-    { MODKEY|ShiftMask,		        XK_n,      spawn,       SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
-    { MODKEY,                       XK_Print,  spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
-    { MODKEY|ShiftMask,             XK_Print,  spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
-    { MODKEY|ControlMask,           XK_c,      spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
-    { MODKEY|ControlMask,           XK_i,      spawn,       SHCMD("$HOME/.local/bin/sysnfo") },
-    { MODKEY|ControlMask,           XK_w,      spawn,       SHCMD("$HOME/.local/bin/weather-notify") },
+    { MODKEY|ShiftMask,             XK_w,           spawn,       {.v = (const char*[]){ BROWSER, NULL } } },
+    { MODKEY|ShiftMask,             XK_m,           spawn,       {.v = mail } },
+    { MODKEY|ShiftMask,             XK_F12,         spawn,       {.v = picom } },
+    { MODKEY|ControlMask,           XK_l,           spawn,       {.v = slock  } },
+    { MODKEY|ShiftMask,             XK_e,           spawn,       {.v = thunar } },
+    { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
+    { MODKEY,                       XK_Print,       spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
+    { MODKEY|ShiftMask,             XK_Print,       spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
+    { MODKEY|ControlMask,           XK_c,           spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
+    { MODKEY|ControlMask,           XK_i,           spawn,       SHCMD("$HOME/.local/bin/sysnfo") },
+    { MODKEY|ControlMask,           XK_w,           spawn,       SHCMD("$HOME/.local/bin/weather-notify") },
 
 };
 
