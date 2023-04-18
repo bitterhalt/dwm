@@ -104,10 +104,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-p", "Run", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-p", "Run", "-i", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *rofidmenu[]  = { "rofidmenu", NULL };
-static const char *powermenu[] = { "powermenu", NULL };
+static const char *powermenu[] = { "dmenu-power", NULL };
 static const char *picom[] = { "picom-toggle", NULL };
 static const char *mail[] = {"thunderbird", NULL };
 static const char *slock[] ={"i3lock-color", NULL };
