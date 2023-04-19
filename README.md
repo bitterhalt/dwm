@@ -30,8 +30,9 @@ cd dwm
 sudo make instal
 ```
 ### Keyboard Shortcuts
-Check config.h
+Too many :D Check config.h
 
 ### Credits
 * Forked from [https://dwm.suckless.org/](https://st.suckless.org/)
 * Luke Smith DWM build: https://github.com/LukeSmithxyz/dwm
+* Inpiration and status scripts: https://github.com/seeingangelz/
