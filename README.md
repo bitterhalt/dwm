@@ -21,7 +21,7 @@ This is my build of DWM. It uses [statuscmd](https://dwm.suckless.org/patches/st
 ## statusbar
 [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async)
 
-Check my statusbar scripts from .dotfiles
+Check my [statusbar](https://github.com/bitterhalt/dotfiles/tree/main/.local/bin/statusbar) for scripts scripts
 
 ## Installation
 ```
