@@ -104,6 +104,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *browser[] = { "firefox", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-p", "Run", "-i", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *rofidmenu[]  = { "rofidmenu", NULL };
@@ -112,6 +113,7 @@ static const char *picom[] = { "picom-toggle", NULL };
 static const char *mail[] = {"thunderbird", NULL };
 static const char *slock[] ={"i3lock-color", NULL };
 static const char *thunar[] ={"thunar", NULL };
+static const char *calculator[] ={"galculator", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -174,18 +176,18 @@ static const Key keys[] = {
     { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%; kill -39 $(pidof dwmblocks)") },
     { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%; kill -39 $(pidof dwmblocks)") },
     /* Other bindings*/
-    { MODKEY|ShiftMask,             XK_w,           spawn,       {.v = (const char*[]){ BROWSER, NULL } } },
+    { MODKEY|ShiftMask,             XK_w,           spawn,       {.v = browser } },
     { MODKEY|ShiftMask,             XK_m,           spawn,       {.v = mail } },
     { MODKEY|ShiftMask,             XK_F12,         spawn,       {.v = picom } },
     { MODKEY|ControlMask,           XK_l,           spawn,       {.v = slock  } },
     { MODKEY|ShiftMask,             XK_e,           spawn,       {.v = thunar } },
+    { 0,  XF86XK_Calculator,                         spawn,       {.v = calculator } },
     { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,       spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
     { MODKEY|ShiftMask,             XK_Print,       spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
     { MODKEY|ControlMask,           XK_c,           spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
     { MODKEY|ControlMask,           XK_i,           spawn,       SHCMD("$HOME/.local/bin/sysnfo") },
     { MODKEY|ControlMask,           XK_w,           spawn,       SHCMD("$HOME/.local/bin/weather-notify") },
-
 };
 
 /* button definitions */
