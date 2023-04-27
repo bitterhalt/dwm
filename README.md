@@ -9,6 +9,7 @@ This is my build of DWM. It uses [statuscmd](https://dwm.suckless.org/patches/st
 * dwm-attachbottom
 * dwm-autostart
 * dwm-cyclelayouts
+* dwm-hide_vacant_tags
 * dwm-movestack
 * dwm-restartsig
 * dwm-scratchpads
