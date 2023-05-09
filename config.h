@@ -141,7 +141,7 @@ static const Key keys[] = {
     { MODKEY|ControlMask,           XK_minus,       incrogaps,      {.i = -5 } },
     { MODKEY,                       XK_g,           togglegaps,     {0} },
     { MODKEY|ShiftMask,             XK_g,           defaultgaps,    {0} },
-    { MODKEY|ShiftMask,             XK_Return,      zoom,           {0} },
+    { MODKEY,                       XK_BackSpace,   zoom,           {0} },
     { MODKEY,                       XK_Tab,         view,           {0} },
     { MODKEY,                       XK_q,           killclient,     {0} },
     { MODKEY,                       XK_F1,           setlayout,      {.v = &layouts[0]} },

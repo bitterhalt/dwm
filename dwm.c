@@ -860,13 +860,14 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 	text = p;
 
 	w += 2; /* 1px padding on both sides */
+    w += horizpadbar;
 	ret = x = m->ww - w;
 
 	drw_setscheme(drw, scheme[LENGTH(colors)]);
 	drw->scheme[ColFg] = scheme[SchemeNorm][ColFg];
 	drw->scheme[ColBg] = scheme[SchemeNorm][ColBg];
 	drw_rect(drw, x, 0, w, bh, 1, 1);
-	x++;
+	x += horizpadbar / 2;
 
 	/* process status text */
 	i = -1;
@@ -943,8 +944,9 @@ drawbar(Monitor *m)
 
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
-		tw = statusw = m->ww - drawstatusbar(m, bh, stext);
+        tw = statusw = m->ww - drawstatusbar(m, bh, stext);
 	}
+
 
 	for (c = m->clients; c; c = c->next) {
 		occ |= c->tags;
