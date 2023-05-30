@@ -73,6 +73,7 @@ static const Rule rules[] = {
 	{ NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
 	{ NULL,       "ranger",     NULL,       SPTAG(1),       1,           -1 },
 	{ NULL,       "discord",    NULL,       SPTAG(2),       1,           -1 },
+    { "firefox", "Toolkit", "Picture-in-Picture", 0,        1,           -1},
 };
 
 /* layout(s) */
