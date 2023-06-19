@@ -185,7 +185,7 @@ static const Key keys[] = {
     { MODKEY|ControlMask,           XK_l,           spawn,       {.v = slock  } },
     { MODKEY|ShiftMask,             XK_e,           spawn,       {.v = thunar } },
     { 0,  XF86XK_Calculator,                         spawn,       {.v = calculator } },
-    { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -e nvim ~/Documents/.vimwiki/notes.md") },
+    { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -c floatterm -g 144x41  -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,       spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
     { MODKEY|ShiftMask,             XK_Print,       spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
     { MODKEY|ControlMask,           XK_c,           spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
