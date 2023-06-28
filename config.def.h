@@ -124,7 +124,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
     { MODKEY,                       XK_d,           spawn,          {.v = rofidmenu } },
     { MODKEY|ShiftMask,             XK_p,           spawn,          {.v = powermenu } },
-    { MODKEY,                       XK_F4,           spawn,          {.v = rofikiller } },
+    { MODKEY,                       XK_F4,          spawn,          {.v = rofikiller } },
     { MODKEY,                       XK_b,           togglebar,      {0} },
     { MODKEY,                       XK_j,           focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,           focusstack,     {.i = -1 } },
@@ -145,8 +145,8 @@ static const Key keys[] = {
     { MODKEY,                       XK_BackSpace,   zoom,           {0} },
     { MODKEY,                       XK_Tab,         view,           {0} },
     { MODKEY,                       XK_q,           killclient,     {0} },
-    { MODKEY,                       XK_F1,           setlayout,      {.v = &layouts[0]} },
-    { MODKEY,                       XK_F2,           setlayout,      {.v = &layouts[1]} },
+    { MODKEY,                       XK_F1,          setlayout,      {.v = &layouts[0]} },
+    { MODKEY,                       XK_F2,          setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,           setlayout,      {.v = &layouts[2]} },
     { MODKEY|ControlMask,           XK_comma,       cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,           XK_period,      cyclelayout,    {.i = +1 } },
@@ -184,13 +184,16 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_F12,         spawn,       {.v = picom } },
     { MODKEY|ControlMask,           XK_l,           spawn,       {.v = slock  } },
     { MODKEY|ShiftMask,             XK_e,           spawn,       {.v = thunar } },
-    { 0,  XF86XK_Calculator,                         spawn,       {.v = calculator } },
+    { 0,  XF86XK_Calculator,                        spawn,      {.v = calculator } },
     { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -c floatterm -g 144x41  -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,       spawn,       SHCMD("flameshot full --path ~/Pictures/screenshots --delay 2000") },
     { MODKEY|ShiftMask,             XK_Print,       spawn,       SHCMD("flameshot gui --path ~/Pictures/screenshots") },
     { MODKEY|ControlMask,           XK_c,           spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
     { MODKEY|ControlMask,           XK_i,           spawn,       SHCMD("$HOME/.local/bin/sysnfo") },
     { MODKEY|ControlMask,           XK_w,           spawn,       SHCMD("$HOME/.local/bin/weather-notify") },
+    { MODKEY,                       XK_F11,         spawn,       SHCMD("pavucontrol") },
+    { MODKEY,                       XK_F8,          spawn,       SHCMD("$HOME/.local/bin/mic-toggle") },
+
 };
 
 /* button definitions */
