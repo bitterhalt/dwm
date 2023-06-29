@@ -58,6 +58,7 @@ static const Rule rules[] = {
     { "thunderbird",  NULL,         NULL,       1 << 2,         0,           -1 },
     { "steam",        NULL,         NULL,       1 << 4,         1,           -1 },
     { "corectrl",     NULL,         NULL,       1 << 8,         1,           -1 },
+    { "Virt-manager", NULL,         NULL,       1 << 7,         1,           -1 },
     { "Bitwarden",    NULL,         NULL,       0,              1,           -1 },
     { "floatterm",    NULL,         NULL,       0,              1,           -1 },
     { "Galculator",   NULL,         NULL,       0,              1,           -1 },
