@@ -56,6 +56,7 @@ static const Rule rules[] = {
     { "mpv",          NULL,         NULL,       0,              1,           -1 },
     { "qBittorrent",  NULL,         NULL,       1 << 3,         0,           -1 },
     { "thunderbird",  NULL,         NULL,       1 << 2,         0,           -1 },
+    { "Signal",       NULL,         NULL,       1 << 2,         0,           -1 },
     { "steam",        NULL,         NULL,       1 << 4,         1,           -1 },
     { "corectrl",     NULL,         NULL,       1 << 8,         1,           -1 },
     { "Virt-manager", NULL,         NULL,       1 << 7,         1,           -1 },
@@ -144,7 +145,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_g,           togglegaps,     {0} },
     { MODKEY|ShiftMask,             XK_g,           defaultgaps,    {0} },
     { MODKEY,                       XK_BackSpace,   zoom,           {0} },
-    { MODKEY,                       XK_Tab,         view,           {0} },
+    { MODKEY,                       XK_less,        view,           {0} },
     { MODKEY,                       XK_q,           killclient,     {0} },
     { MODKEY,                       XK_F1,          setlayout,      {.v = &layouts[0]} },
     { MODKEY,                       XK_F2,          setlayout,      {.v = &layouts[1]} },
@@ -195,6 +196,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_F11,         spawn,       SHCMD("pavucontrol") },
     { MODKEY,                       XK_F9,          spawn,       SHCMD("$HOME/.local/bin/mic-toggle") },
     { MODKEY|ShiftMask,             XK_Delete,      spawn,       SHCMD(TERMINAL " -e htop") },
+    { MODKEY,                       XK_Tab,         spawn,       SHCMD("$HOME/.local/bin/rofiwindow") },
 
 };
 
