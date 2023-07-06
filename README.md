@@ -18,7 +18,7 @@ This is my build of DWM. It uses [statuscmd](https://dwm.suckless.org/patches/st
 * statuscmd
 
 ## statusbar
-[dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async)
+[dwmblocks-async](https://github.com/bitterhalt/dwmblocks-async)
 
 Check my [statusbar](https://github.com/bitterhalt/dotfiles/tree/main/.local/bin/statusbar) for scripts
 
