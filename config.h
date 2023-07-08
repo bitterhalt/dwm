@@ -109,7 +109,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *browser[] = { "firefox", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-p", "Run", "-i", NULL };
-static const char *rofidmenu[]  = { "rofidmenu", NULL };
+static const char *rofi[]  = { "rofi_applauncher", NULL };
 static const  char *rofikiller[] = { "rofi_kill_process", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *powermenu[] = { "dmenu_power", NULL };
@@ -124,7 +124,7 @@ static const Key keys[] = {
     /* modifier                     key             function        argument */
     { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_d,           spawn,          {.v = rofidmenu } },
+    { MODKEY,                       XK_d,           spawn,          {.v = rofi } },
     { MODKEY|ShiftMask,             XK_p,           spawn,          {.v = powermenu } },
     { MODKEY,                       XK_F4,          spawn,          {.v = rofikiller } },
     { MODKEY,                       XK_b,           togglebar,      {0} },
@@ -177,9 +177,9 @@ static const Key keys[] = {
     { MODKEY|ControlMask,           XK_q,           quit,           {0} },
     { MODKEY|ControlMask,           XK_r,           quit,           {1} },
     /* Multimedia keys */
-    { 0,   XF86XK_AudioMute,        spawn,         SHCMD("pactl set-sink-mute 0 toggle; kill -39 $(pidof dwmblocks)") },
-    { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%; kill -39 $(pidof dwmblocks)") },
-    { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%; kill -39 $(pidof dwmblocks)") },
+    { 0,   XF86XK_AudioMute,        spawn,         SHCMD("status-volume mute") },
+    { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("status-volume down") },
+    { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("status-volume up") },
     /* Other bindings*/
     { MODKEY|ShiftMask,             XK_w,           spawn,       {.v = browser } },
     { MODKEY|ShiftMask,             XK_m,           spawn,       {.v = mail } },
