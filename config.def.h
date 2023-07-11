@@ -195,6 +195,7 @@ static const Key keys[] = {
     { MODKEY|ControlMask,           XK_w,           spawn,       SHCMD("$HOME/.local/bin/weather-notify") },
     { MODKEY,                       XK_F11,         spawn,       SHCMD("pavucontrol") },
     { MODKEY,                       XK_F9,          spawn,       SHCMD("$HOME/.local/bin/mic-toggle") },
+    { MODKEY|ShiftMask,             XK_F9,          spawn,       SHCMD("$HOME/.local/bin/dunst-toggle") },
     { MODKEY|ShiftMask,             XK_Delete,      spawn,       SHCMD(TERMINAL " -e htop") },
     { MODKEY,                       XK_Tab,         spawn,       SHCMD("$HOME/.local/bin/rofiwindow") },
 
