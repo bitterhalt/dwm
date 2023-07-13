@@ -34,4 +34,8 @@ Too many :D Check config.h
 ### Credits
 * Forked from [https://dwm.suckless.org/](https://st.suckless.org/)
 * Luke Smith DWM build: https://github.com/LukeSmithxyz/dwm
-* Inpiration and status scripts: https://github.com/seeingangelz/
+
+* Inpiration: 
+- https://github.com/seeingangelz/
+- https://github.com/newmanls
+- https://github.com/UtkarshVerma
