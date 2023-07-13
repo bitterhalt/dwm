@@ -31,11 +31,8 @@ sudo make instal
 ### Keyboard Shortcuts
 Too many :D Check config.h
 
-### Credits
-* Forked from [https://dwm.suckless.org/](https://st.suckless.org/)
-* Luke Smith DWM build: https://github.com/LukeSmithxyz/dwm
-
-* Inpiration: 
+### Inpiration:
+- https://github.com/LukeSmithxyz/dwm
 - https://github.com/seeingangelz/
 - https://github.com/newmanls
 - https://github.com/UtkarshVerma
