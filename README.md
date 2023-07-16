@@ -16,6 +16,7 @@ This is my build of DWM. It uses [statuscmd](https://dwm.suckless.org/patches/st
 * dwm-vanitygaps
 * dwm-xrdb
 * statuscmd
+* dwm-sticky-patch
 
 ## statusbar
 [dwmblocks-async](https://github.com/bitterhalt/dwmblocks-async)
