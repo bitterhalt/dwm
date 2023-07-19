@@ -109,7 +109,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *browser[] = { "firefox", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-p", "Run", "-i", NULL };
 static const char *rofi[]  = { "rofi_applauncher", NULL };
-static const char *rofikiller[] = { "rofi_kill_process", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *powermenu[] = { "dmenu_power", NULL };
 static const char *picom[] = { "picom-toggle", NULL };
@@ -120,11 +119,14 @@ static const char *calculator[] ={"galculator", NULL };
 #include "movestack.c"
 static const Key keys[] = {
     /* modifier                     key             function        argument */
-    { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd } },
-    { MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_d,           spawn,          {.v = rofi } },
-    { MODKEY|ShiftMask,             XK_p,           spawn,          {.v = powermenu } },
-    { MODKEY|ShiftMask,             XK_Delete,      spawn,          {.v = rofikiller } },
+    { MODKEY,                       XK_p,           spawn,       {.v = dmenucmd } },
+    { MODKEY,                       XK_Return,      spawn,       {.v = termcmd } },
+    { MODKEY,                       XK_d,           spawn,       {.v = rofi } },
+    { MODKEY|ShiftMask,             XK_p,           spawn,       {.v = powermenu } },
+    { MODKEY|ShiftMask,             XK_w,           spawn,       {.v = browser } },
+    { MODKEY|ShiftMask,             XK_m,           spawn,       {.v = mail } },
+    { MODKEY|ShiftMask,             XK_F12,         spawn,       {.v = picom } },
+    { MODKEY|ShiftMask,             XK_e,           spawn,       {.v = thunar } },
     { MODKEY,                       XK_b,           togglebar,      {0} },
     { MODKEY,                       XK_j,           focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,           focusstack,     {.i = -1 } },
@@ -177,25 +179,25 @@ static const Key keys[] = {
     { 0,   XF86XK_AudioMute,        spawn,         SHCMD("status-volume mute") },
     { 0,   XF86XK_AudioLowerVolume, spawn,         SHCMD("status-volume down") },
     { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("status-volume up") },
-    { 0,   XF86XK_Tools,            spawn,         SHCMD("pavucontrol") },
-    { 0,   XF86XK_HomePage,         spawn,         SHCMD("dmenu_network") },
     { 0,   XF86XK_Calculator,       spawn,          {.v = calculator } },
     /* Other bindings*/
-    { MODKEY|ShiftMask,             XK_w,           spawn,       {.v = browser } },
-    { MODKEY|ShiftMask,             XK_m,           spawn,       {.v = mail } },
-    { MODKEY|ShiftMask,             XK_F12,         spawn,       {.v = picom } },
-    { MODKEY|ShiftMask,             XK_e,           spawn,       {.v = thunar } },
+    { MODKEY,                       XK_F1,          spawn,       SHCMD("pavucontrol") },
+    { MODKEY,                       XK_F2,          spawn,       SHCMD("dmenu_network") },
+    { MODKEY,                       XK_F4,          spawn,       SHCMD("rofi_kill_process") },
     { MODKEY,                       XK_F8,          spawn,       SHCMD("rofi_screenshot") },
+    { MODKEY|ShiftMask,             XK_F8,          spawn,       SHCMD("rofi_screenshot -s") },
+    { MODKEY,                       XK_F9,          spawn,       SHCMD("$HOME/.local/bin/mic-toggle") },
+    { MODKEY|ShiftMask,             XK_F9,          spawn,       SHCMD("$HOME/.local/bin/dunst-toggle") },
     { MODKEY,                       XK_F11,         spawn,       SHCMD("betterlockscreen --lock blur") },
+    { MODKEY|ShiftMask,             XK_F11,         spawn,       SHCMD("$HOME/.local/bin/locker-toggler") },
+    { MODKEY,                       XK_section,     spawn,       SHCMD("dmenu_dots") },
     { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -c floatterm -g 144x41  -e nvim ~/Documents/.vimwiki/notes.md") },
-    { MODKEY,                       XK_Print,       spawn,       SHCMD("$HOME/.local/bin/quick-shot") },
+    { MODKEY,                       XK_Print,       spawn,       SHCMD("$HOME/.local/bin/quick-shot -f") },
     { MODKEY|ShiftMask,             XK_Print,       spawn,       SHCMD("$HOME/.local/bin/quick-shot -r") },
     { MODKEY|ControlMask,           XK_Print,       spawn,       SHCMD("$HOME/.local/bin/quick-shot -d") },
     { MODKEY|ControlMask,           XK_c,           spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
     { MODKEY|ControlMask,           XK_i,           spawn,       SHCMD("$HOME/.local/bin/sysnfo") },
     { MODKEY|ControlMask,           XK_w,           spawn,       SHCMD("$HOME/.local/bin/weather-notify") },
-    { MODKEY,                       XK_F9,          spawn,       SHCMD("$HOME/.local/bin/mic-toggle") },
-    { MODKEY|ShiftMask,             XK_F9,          spawn,       SHCMD("$HOME/.local/bin/dunst-toggle") },
     { MODKEY,                       XK_Tab,         spawn,       SHCMD("$HOME/.local/bin/rofiwindow") },
 
 };
