@@ -189,7 +189,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_F9,          spawn,       SHCMD("$HOME/.local/bin/mic-toggle") },
     { MODKEY|ShiftMask,             XK_F9,          spawn,       SHCMD("$HOME/.local/bin/dunst-toggle") },
     { MODKEY,                       XK_F11,         spawn,       SHCMD("betterlockscreen --lock blur") },
-    { MODKEY|ShiftMask,             XK_F11,         spawn,       SHCMD("$HOME/.local/bin/locker-toggler") },
+    { MODKEY|ShiftMask,             XK_F11,         spawn,       SHCMD("$HOME/.local/bin/locker-toggler -t") },
     { MODKEY,                       XK_section,     spawn,       SHCMD("dmenu_dots") },
     { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -c floatterm -g 144x41  -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,       spawn,       SHCMD("$HOME/.local/bin/quick-shot -f") },
