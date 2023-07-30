@@ -15,7 +15,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 1;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "JetBrains Mono:style:Regular:size=10", "Symbols Nerd Font :size=11", "feather:size=11" };
+static const char *fonts[]          = { "JetBrains Mono:style:Regular:size=10", "Symbols Nerd Font :size=11", "feather:size=12" };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -32,7 +32,7 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
+const char *spcmd1[] = {"st", "-n", "spterm", "-g", "144x41", NULL };
 const char *spcmd2[] = {"st", "-n", "ranger", "-g", "144x41", "-e", "ranger", NULL };
 const char *spcmd3[] = {"discord", NULL };
 static Sp scratchpads[] = {
@@ -156,7 +156,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_t,           togglescratch,  {.ui = 0 } },
     { MODKEY,                       XK_r,           togglescratch,  {.ui = 1 } },
     { MODKEY,                       XK_c,           togglescratch,  {.ui = 2 } },
-    { MODKEY,                       XK_F5,          xrdb,           {.v = NULL } },
+    { MODKEY|ShiftMask,             XK_F5,          xrdb,           {.v = NULL } },
     TAGKEYS(                        XK_1,                           0)
     TAGKEYS(                        XK_2,                           1)
     TAGKEYS(                        XK_3,                           2)
@@ -176,18 +176,18 @@ static const Key keys[] = {
     /* Other bindings*/
     { MODKEY,                       XK_F1,          spawn,       SHCMD("pavucontrol") },
     { MODKEY,                       XK_F2,          spawn,       SHCMD("dmenu_network") },
-    { MODKEY,                       XK_F3,          spawn,       SHCMD("signal-desktop") },
+    { MODKEY,                       XK_F3,          spawn,       SHCMD("rofi_screenshot") },
+    { MODKEY|ShiftMask,             XK_F3,          spawn,       SHCMD("quick-record -kill") },
     { MODKEY,                       XK_F4,          spawn,       SHCMD("rofi_kill_process") },
-    { MODKEY,                       XK_F8,          spawn,       SHCMD("rofi_screenshot") },
-    { MODKEY|ShiftMask,             XK_F8,          spawn,       SHCMD("quick-record -kill") },
+    { MODKEY,                       XK_F5,          spawn,       SHCMD("signal-desktop") },
     { MODKEY,                       XK_F9,          spawn,       SHCMD("mic-toggle") },
     { MODKEY|ShiftMask,             XK_F9,          spawn,       SHCMD("dunst-toggle") },
     { MODKEY,                       XK_F11,         spawn,       SHCMD("betterlockscreen --lock blur") },
     { MODKEY|ShiftMask,             XK_F11,         spawn,       SHCMD("locker-toggler -t") },
     { MODKEY|ShiftMask,             XK_F12,         spawn,       SHCMD("picom-toggle") },
     { MODKEY,                       XK_section,     spawn,       SHCMD("dmenu_dots") },
-    { MODKEY|ShiftMask,             XK_e,           spawn,       SHCMD("thunar") },
-    { MODKEY|ShiftMask,             XK_p,           spawn,       SHCMD("rofi_powermenu") },
+    { MODKEY|ShiftMask,             XK_e,           spawn,       SHCMD("pcmanfm") },
+    { MODKEY|ShiftMask,             XK_p,           spawn,       SHCMD("dmenu_power") },
     { MODKEY|ControlMask,           XK_p,           spawn,       SHCMD("colorpick") },
     { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -c floatterm -g 144x41  -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,       spawn,       SHCMD("$HOME/.local/bin/quick-shot -f") },
