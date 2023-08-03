@@ -186,7 +186,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_F11,         spawn,       SHCMD("locker-toggler -t") },
     { MODKEY|ShiftMask,             XK_F12,         spawn,       SHCMD("picom-toggle") },
     { MODKEY|ShiftMask,             XK_e,           spawn,       SHCMD("pcmanfm") },
-    { MODKEY|ShiftMask,             XK_p,           spawn,       SHCMD("dmenu_power") },
+    { MODKEY|ShiftMask,             XK_p,           spawn,       SHCMD("rofi_powermenu") },
     { MODKEY|ControlMask,           XK_p,           spawn,       SHCMD("colorpick") },
     { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -c floatterm -g 144x41  -e nvim ~/Documents/.vimwiki/notes.md") },
     { MODKEY,                       XK_Print,       spawn,       SHCMD("$HOME/.local/bin/quick-shot -f") },
