@@ -174,7 +174,7 @@ static const Key keys[] = {
     { 0,   XF86XK_AudioRaiseVolume, spawn,         SHCMD("status-volume up") },
     { 0,   XF86XK_Calculator,       spawn,          SHCMD("galculator" ) },
     /* Other bindings*/
-    { MODKEY,                       XK_F1,          spawn,       SHCMD("setwall") },
+    { MODKEY,                       XK_F1,          spawn,       SHCMD("nsxiv-wall") },
     { MODKEY,                       XK_F2,          spawn,       SHCMD("dmenu_network") },
     { MODKEY,                       XK_F3,          spawn,       SHCMD("rofi_screenshot") },
     { MODKEY|ShiftMask,             XK_F3,          spawn,       SHCMD("quick-record -kill") },
@@ -185,7 +185,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_F11,         spawn,       SHCMD("betterlockscreen --lock blur") },
     { MODKEY|ShiftMask,             XK_F11,         spawn,       SHCMD("locker-toggler -t") },
     { MODKEY|ShiftMask,             XK_F12,         spawn,       SHCMD("picom-toggle") },
-    { MODKEY|ShiftMask,             XK_e,           spawn,       SHCMD("pcmanfm") },
+    { MODKEY|ShiftMask,             XK_e,           spawn,       SHCMD("thunar") },
     { MODKEY|ShiftMask,             XK_p,           spawn,       SHCMD("rofi_powermenu") },
     { MODKEY|ControlMask,           XK_p,           spawn,       SHCMD("colorpick") },
     { MODKEY|ShiftMask,             XK_n,           spawn,       SHCMD(TERMINAL " -c floatterm -g 144x41  -e nvim ~/Documents/.vimwiki/notes.md") },
