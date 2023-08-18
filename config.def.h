@@ -35,11 +35,13 @@ typedef struct {
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "144x41", NULL };
 const char *spcmd2[] = {"st", "-n", "ranger", "-g", "144x41", "-e", "ranger", NULL };
 const char *spcmd3[] = {"discord", NULL };
+const char *spcmd4[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
-	{"spterm",    spcmd1},
-	{"ranger",    spcmd2},
-	{"discord",   spcmd3},
+	{"spterm",      spcmd1},
+	{"ranger",      spcmd2},
+	{"discord",     spcmd3},
+    {"keepassxc",   spcmd4},
 };
 
 /* tagging */
@@ -74,6 +76,7 @@ static const Rule rules[] = {
 	{ NULL,       "spterm",     NULL,       SPTAG(0),       1,           -1 },
 	{ NULL,       "ranger",     NULL,       SPTAG(1),       1,           -1 },
 	{ NULL,       "discord",    NULL,       SPTAG(2),       1,           -1 },
+    { NULL,       "keepassxc",  NULL,       SPTAG(3),       1,           -1 },
     { "firefox", "Toolkit", "Picture-in-Picture", 0,        1,           -1},
 };
 
@@ -156,6 +159,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_t,           togglescratch,  {.ui = 0 } },
     { MODKEY,                       XK_r,           togglescratch,  {.ui = 1 } },
     { MODKEY,                       XK_c,           togglescratch,  {.ui = 2 } },
+    { MODKEY,                       XK_F6,           togglescratch,  {.ui = 3 } },
     { MODKEY|ShiftMask,             XK_F5,          xrdb,           {.v = NULL } },
     TAGKEYS(                        XK_1,                           0)
     TAGKEYS(                        XK_2,                           1)
