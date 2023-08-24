@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 /* Constants */
 #define TERMINAL "st"
-#define BROWSER "firefox"
+#define BROWSER "Librewolf"
 #include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -15,7 +15,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 1;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 5;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "JetBrains Mono:style:Regular:size=10", "Symbols Nerd Font :size=11", "feather:size=12" };
+static const char *fonts[]          = { "JetBrains Mono:style:Regular:size=10", "Symbols Nerd Font :size=11" };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -54,6 +54,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
     { "Gimp",         NULL,         NULL,       0,              1,           -1 },
     { "firefox",      NULL,         NULL,       1 << 1,         0,           -1 },
+    { "LibreWolf",    NULL,         NULL,       1 << 1,         0,           -1 },
     { "mpv",          NULL,         NULL,       0,              1,           -1 },
     { "qBittorrent",  NULL,         NULL,       1 << 3,         0,           -1 },
     { "thunderbird",  NULL,         NULL,       1 << 2,         0,           -1 },
@@ -110,7 +111,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *termcmd[]  = { "st", NULL };
-static const char *browser[] = { "firefox", NULL };
+static const char *browser[] = { "librewolf", NULL };
 static const char *mail[] = {"thunderbird", NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-p", "Run", "-i", NULL };
 static const char *rofi[]  = { "rofi_applauncher", NULL };
