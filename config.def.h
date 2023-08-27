@@ -1,7 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 /* Constants */
 #define TERMINAL "st"
-#define BROWSER "Librewolf"
+#define BROWSER "librewolf"
+
 #include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -183,6 +184,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_F4,          spawn,       SHCMD("rofi_kill_process") },
     { MODKEY,                       XK_F5,          spawn,       SHCMD("signal-desktop") },
     { MODKEY,                       XK_F6,          spawn,       SHCMD("keepassxc") },
+    { MODKEY,                       XK_F7,          spawn,       SHCMD("mpv --player-operation-mode=pseudo-gui") },
     { MODKEY,                       XK_F9,          spawn,       SHCMD("mic-toggle") },
     { MODKEY|ShiftMask,             XK_F9,          spawn,       SHCMD("dunst-toggle") },
     { MODKEY,                       XK_F11,         spawn,       SHCMD("betterlockscreen --lock blur") },
