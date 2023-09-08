@@ -67,7 +67,6 @@ static const Rule rules[] = {
     { "Galculator",   NULL,         NULL,       0,              1,           -1 },
     { "Gcolor3",      NULL,         NULL,       0,              1,           -1 },
     { "Lxappearance", NULL,         NULL,       0,              1,           -1 },
-    { "Nitrogen",     NULL,         NULL,       0,              1,           -1 },
     { "Nsxiv",        NULL,         NULL,       0,              1,           -1 },
     { "Pavucontrol",  NULL,         NULL,       0,              1,           -1 },
     { "qt5ct",        NULL,         NULL,       0,              1,           -1 },
@@ -179,7 +178,7 @@ static const Key keys[] = {
     { 0,   XF86XK_Calculator,       spawn,          SHCMD("galculator" ) },
     /* Other bindings*/
     { MODKEY,                       XK_F1,          spawn,       SHCMD("nsxiv-wall") },
-    { MODKEY,                       XK_F2,          spawn,       SHCMD("clipmenu") },
+    { MODKEY,                       XK_F2,          spawn,       SHCMD("clipmenu -i -p Clip -c -l 15 -bw 2") },
     { MODKEY,                       XK_F3,          spawn,       SHCMD("mpv --player-operation-mode=pseudo-gui") },
     { MODKEY,                       XK_F4,          spawn,       SHCMD("rofi_kill_process") },
     { MODKEY,                       XK_F5,          spawn,       SHCMD("signal-desktop") },
