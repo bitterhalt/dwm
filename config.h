@@ -185,6 +185,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_F6,          spawn,       SHCMD("keepassxc") },
     { MODKEY,                       XK_F7,          spawn,       SHCMD("rofi_screenshot") },
     { MODKEY|ShiftMask,             XK_F7,          spawn,       SHCMD("quick-record -kill") },
+    { MODKEY,                       XK_F8,          spawn,       SHCMD("pavucontrol") },
     { MODKEY,                       XK_F9,          spawn,       SHCMD("mic-toggle") },
     { MODKEY,                       XK_F11,         spawn,       SHCMD("betterlockscreen --lock blur") },
     { MODKEY|ShiftMask,             XK_F9,          spawn,       SHCMD("dunst-toggle") },
