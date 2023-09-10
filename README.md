@@ -5,7 +5,6 @@ This is my build of DWM. It uses [statuscmd](https://dwm.suckless.org/patches/st
 ### Patches:
 * dwm-actualfullscreen
 * dwm-attachbottom
-* dwm-autostart
 * dwm-cyclelayouts
 * dwm-hide_vacant_tags
 * dwm-movestack
