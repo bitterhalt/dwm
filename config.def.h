@@ -200,6 +200,7 @@ static const Key keys[] = {
     { MODKEY|ControlMask,           XK_c,           spawn,       SHCMD("$HOME/.local/bin/dunst-calendar") },
     { MODKEY|ControlMask,           XK_i,           spawn,       SHCMD("$HOME/.local/bin/sysnfo") },
     { MODKEY|ControlMask,           XK_w,           spawn,       SHCMD("$HOME/.local/bin/weather-notify") },
+    { MODKEY|ControlMask,           XK_u,           spawn,       SHCMD("$HOME/.local/bin/update-notify") },
     { MODKEY,                       XK_Tab,         spawn,       SHCMD("$HOME/.local/bin/rofiwindow") },
 
 };
