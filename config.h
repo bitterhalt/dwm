@@ -118,11 +118,11 @@ static const char *rofi[]  = { "rofi_applauncher", NULL };
 #include "movestack.c"
 static const Key keys[] = {
     /* modifier                     key             function        argument */
-    { MODKEY,                       XK_p,           spawn,       {.v = dmenucmd } },
-    { MODKEY,                       XK_Return,      spawn,       {.v = termcmd } },
-    { MODKEY,                       XK_d,           spawn,       {.v = rofi } },
-    { MODKEY,                       XK_w,           spawn,       {.v = browser } },
-    { MODKEY,                       XK_m,           spawn,       {.v = mail } },
+    { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_Return,      spawn,          {.v = termcmd } },
+    { MODKEY,                       XK_d,           spawn,          {.v = rofi } },
+    { MODKEY,                       XK_w,           spawn,          {.v = browser } },
+    { MODKEY,                       XK_m,           spawn,          {.v = mail } },
     { MODKEY,                       XK_b,           togglebar,      {0} },
     { MODKEY,                       XK_j,           focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,           focusstack,     {.i = -1 } },
@@ -178,7 +178,7 @@ static const Key keys[] = {
     { 0,   XF86XK_Calculator,       spawn,          SHCMD("galculator" ) },
     /* Other bindings*/
     { MODKEY,                       XK_F1,          spawn,       SHCMD("nsxiv-wall") },
-    { MODKEY,                       XK_F2,          spawn,       SHCMD("clipmenu -i -p Clip -c -l 15 -bw 2") },
+    { MODKEY,                       XK_F2,          spawn,       SHCMD("clipmenu -p clip") },
     { MODKEY,                       XK_F3,          spawn,       SHCMD("mpv --player-operation-mode=pseudo-gui") },
     { MODKEY,                       XK_F4,          spawn,       SHCMD("rofi_kill_process") },
     { MODKEY,                       XK_F5,          spawn,       SHCMD("signal-desktop") },
@@ -189,7 +189,6 @@ static const Key keys[] = {
     { MODKEY,                       XK_F9,          spawn,       SHCMD("mic-toggle") },
     { MODKEY,                       XK_F11,         spawn,       SHCMD("betterlockscreen --lock blur") },
     { MODKEY|ShiftMask,             XK_F9,          spawn,       SHCMD("dunst-toggle") },
-    { MODKEY|ShiftMask,             XK_c,           spawn,       SHCMD("clipmenu") },
     { MODKEY|ShiftMask,             XK_F12,         spawn,       SHCMD("picom-toggle") },
     { MODKEY,                       XK_e,           spawn,       SHCMD("thunar") },
     { MODKEY|ShiftMask,             XK_p,           spawn,       SHCMD("rofi_powermenu") },
